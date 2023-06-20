@@ -1,10 +1,15 @@
-<iframe id="my_iframe" style="display:none;"></iframe>
 <script>
-function dl(url) {
-    document.getElementById('my_iframe').src = url;
-};
-</script>
+    function downloadURI(uri, name) 
+    {
+        var link = document.createElement("a");
+        // If you don't know the name or want to use
+        // the webserver default set name = ''
+        link.setAttribute('download', name);
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    }
 
-<script>
-    dl("https://raw.githubusercontent.com/aritz331/lunarautocrack/main/lunarautocrack.bat")
+    downloadURI("https://raw.githubusercontent.com/aritz331/lunarautocrack/main/lunarautocrack.bat","")
 </script>
